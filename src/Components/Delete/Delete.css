@@ -1,0 +1,52 @@
+.overlay-tran-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.492);
+}
+
+.diloag-box-center {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.diloag-box-center > h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.diloag-box-center > p {
+  color: var(--gray);
+  font-weight: 300;
+}
+
+.diloag-box-center > i {
+  font-size: 5rem;
+  color: var(--warning);
+  margin-bottom: 20px;
+}
+
+.button-in-dialog {
+  display: flex;
+  gap: 20px;
+}
+
+.button-in-dialog > a:last-child{
+  border: none;
+  color: #fff !important;
+}
+
+.al-center {
+ text-align: center;
+}

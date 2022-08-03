@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-continer, .custer-info-box, .custer-vehcial-info, .signature-field-bottom, .content-bill-of-sale-info  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-sizing {
+  max-width: 1300px;
+  width: 100%;
+}
+
+.header-content-wrapper{
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-tag-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo-tag-line > h1 {
+  font-size: 3.5rem;
+  background: url('https://static.vecteezy.com/system/resources/previews/001/966/617/original/white-elegant-texture-wallpaper-background-vector.jpg');
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.company-info-top-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-info-top-left > p {
+  font-weight: 300;
+  font-size: 1rem;
+  display: flex;
+  color: rgb(76, 76, 76);
+  gap: 10px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.company-info-top-left > p > i {
+  color: #000;
+}
+
+.header-content-wrapper > h2 {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.header-content-wrapper > h2 > span {
+  color: red;
+  font-weight: 300;
+}
+
+.header-title-info {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  justify-content: center;
+  padding: 5px 0;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.custer-info-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.custer-info-items {
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.left-side > h3 {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  border-width: thin;
+  justify-content: flex-start;
+  border-radius: 3px;
+  gap: 20px;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.custer-info-wrapper > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.custer-info-wrapper > ul > li {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-width: thin;
+  justify-content: flex-start;
+  border-radius: 3px;
+  gap: 20px;
+  padding: 20px;
+}
+
+.custer-info-wrapper > ul > li > h3 {
+  font-weight: 500;
+  font-size: 15px;
+  color: darkblue;
+}
+
+.custer-info-wrapper > ul > li > span, .custer-vehcial-wrapper > ul > li > span {
+  color: rgb(76, 76, 76);
+  font-weight: 400;
+}
+
+.col-half {
+  width: 49.2%;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.custer-vehcial-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.custer-vehcial-wrapper > ul {
+  display: grid;
+  width: 100%;
+  padding: 20px 0;
+  grid-gap: 10px;
+  grid-template-columns: .4fr 1fr 1fr 1fr .6fr .5fr;
+}
+
+.custer-vehcial-wrapper > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ddd;
+  border-width: thin;
+  border-radius: 3px;
+  padding: 5px 10px;
+  gap: 4px;
+}
+
+.custer-vehcial-wrapper > ul > li > h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: darkblue;
+}
+
+.col-2-flex-fix {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 0 !important;
+}
+
+.signature-field-wrapper {
+  padding: 20px 0;
+  display: flex;
+  
+}
+
+.signature-field-wrapper > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  grid-gap: 10px;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.signature-field-wrapper > ul > li {
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.signature-field-wrapper > ul > li > div > p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgb(76, 76, 76);
+  font-weight: 300;
+}
+
+.signature-field-wrapper > ul > li > div > h4, .difference > h4 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.sigature-box {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  font-weight: 300;
+}
+
+.sigature-box > h4 {
+  width: 100%;
+  font-weight: 300;
+  padding-left: 5px;
+  padding-top: 5px;
+  margin-top: 50px;
+  color: rgb(76, 76, 76);
+  font-size: 14px;
+  border-top: 1px solid;
+}
+
+.checkbox-information {
+  width: 100%;
+}
+
+.checkbox-information > ul {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #ddd;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 4px;
+  margin: 5px 0;
+  padding: 10px 10px;
+  list-style-type: none;
+}
+
+.checkbox-information > p {
+  font-size: 14px;
+  color: rgb(76, 76, 76);
+  font-weight: 400;
+}
+
+.checkbox-information > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 100% !important;
+}
+
+.checkbox-information > ul > li > label {
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.container-space {
+  width: 100%;
+}
+
+
+
+
+
+
+.content-bill-of-sale-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.left-side-info {
+  padding: 20px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.right-side-sale {
+  padding: 20px;
+  padding-right: 0;
+  border-left: 1px solid #ddd;
+}
+
+.difference {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.total-price {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.total-price > li {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+.total-price  > li > h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(47, 47, 51);
+}
+
+.total-price > li > span {
+  font-weight: 300;
+  font-size: 18px;
+  color: rgb(123, 123, 123);
+}
+
+.total-price  > li > h2 {
+  font-weight: 400;
+  color: red;
+}
+
+.bank-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bank-info > p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.bank-info > p > span {
+  font-weight: 400 !important;
+}
+
+
+.discla > p {
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.bank-sign {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.signature {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 40%;
+  text-align: right;
+}
+
+.signature > p {
+  padding-top: 5px;
+  text-align: right;
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+}
+
+.products-bill-of-sale {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.products-bill-of-sale > li {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 10px;
+  grid-template-columns: 1fr 3fr 1fr .7fr 1fr 1fr;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.products-bill-of-sale > li:last-child {
+  border-bottom: none;
+  padding-bottom: 0; 
+  margin-bottom: 0;
+}
+
+.products-bill-of-sale > li > div {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  border-width: thin;
+  justify-content: flex-start;
+  border-radius: 3px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.products-bill-of-sale > li > div:last-child {
+  text-align: right;
+}
+
+.products-bill-of-sale > li > div > span {
+  font-weight: 500;
+  color: var(--red);
+}

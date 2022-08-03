@@ -1,0 +1,35 @@
+.center-container-login {
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.login-form-container > img {
+  width: 100px;
+}
+
+.login-form-container {
+  max-width: 420px;
+  padding: 30px 30px;
+  border-radius: 4px;
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-form-container > h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.login-form-container > p {
+  font-weight: 300;
+  color: rgb(134, 134, 134);
+}
+
+.full-width {
+  width: 100%;
+}

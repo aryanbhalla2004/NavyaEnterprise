@@ -445,3 +445,9 @@ body {
   font-weight: 500;
   color: var(--red);
 }
+
+.adGap-Between {
+  display: flex;
+   width: 100%;
+  justify-content: space-between !important; 
+}

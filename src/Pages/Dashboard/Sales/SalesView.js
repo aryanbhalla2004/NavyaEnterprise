@@ -57,10 +57,14 @@ const SaleView = () => {
     return (totalValue * 0.18).toFixed(2);
   }
 
-  const getPst = () => {
-    let totalValue = listing && (parseInt(listing.amm) + parseInt(listing.warranty) + listing.adminFee);
+  const get9 = () => {
+    let totalValue = 0;
 
-    return totalValue * 0.07
+    listing && listing.products.forEach(element => {
+      totalValue += parseInt(element.total);
+    });
+
+    return (totalValue * 0.09).toFixed(2);
   }
 
   const GenerateFile = () => {
@@ -98,8 +102,8 @@ const SaleView = () => {
           <div class="custer-info-box">
             <div class="content-sizing custer-info-wrapper">
               <div class="left-side">
-                <h3>To M/s. <span>{listing && listing.ms}</span></h3>
-                <h3>Party's GSTIN NO. <span>{listing && listing.partyGST}</span></h3>
+                <h3 className='adGap-Between'><div>To M/s. <span>{listing && listing.ms}</span></div> <div>State Code. <span>{listing && listing.stateCode}</span></div></h3>
+                <h3 className='adGap-Between'><div>Party's GSTIN NO. <span>{listing && listing.partyGST}</span></div> <div>PAN No. <span>{listing && listing.partyGST.slice(2).slice(0, -1).slice(0, -1).slice(0, -1)}</span></div></h3>
               </div>
               <div class="left-side">
                 <h3>Bill No. <span>{listing && listing.invoice}</span></h3>
@@ -172,15 +176,15 @@ const SaleView = () => {
                     </li>
                     <li>
                       <h3>CGST</h3>
-                      <span>&#8377; 0.00</span>
+                      <span>&#8377; {listing && listing.stateCode === "03" ? get9() : "0.00"}</span>
                     </li>
                     <li>
                       <h3>SGST</h3>
-                      <span>&#8377; 0.00</span>
+                      <span>&#8377; {listing && listing.stateCode === "03" ? get9() : "0.00"}</span>
                     </li>
                     <li>
                       <h3>IGST (18%)</h3>
-                      <span>&#8377; {getIGST()}</span>
+                      <span>&#8377; {listing && listing.stateCode !== "03" ? getIGST() : "0.00" }</span>
                     </li>
                     <li>
                       <h3>Cartage:</h3>
@@ -188,7 +192,8 @@ const SaleView = () => {
                     </li>
                     <li>
                       <h2>Total:</h2>
-                      <span>&#8377; {(parseInt(getTotal(false, false)) + parseInt(getIGST())).toFixed(2)}</span>
+                      
+                      <span>&#8377; {parseInt(parseInt(getTotal(false, false)) + parseInt(listing && listing.stateCode === "03" ? (get9() * 2) : getIGST())).toFixed(2)}</span>
                     </li>
                   </ul>
                 </div>

@@ -130,15 +130,15 @@ const SalesAdd = (props) => {
               </div>
               <div className="col-2">
                 <label className="form-label text-dark" htmlFor="c-name">HSN Code<span>*</span></label>
-                <input className="form-control form-control-md form-control-dark" id={index} name="hsn" type="number" value={item.hsn} placeholder="1211" onChange={editSingle} />
+                <input className="form-control form-control-md form-control-dark" id={index} name="hsn" type="number" value={item.hsn} onChange={editSingle} />
               </div>
               <div className="col-1">
                 <label className="form-label text-dark" htmlFor="c-name">Quantity<span>*</span></label>
-                <input className="form-control form-control-md form-control-dark" id={index} name="qt" type="number" value={item.qt} placeholder="4" onChange={editSingle}  />
+                <input className="form-control form-control-md form-control-dark" id={index} name="qt" type="number" value={item.qt} onChange={editSingle}  />
               </div>
               <div className="col-2">
                 <label className="form-label text-dark" htmlFor="c-name">Rate<span>*</span></label>
-                <input className="form-control form-control-md form-control-dark" id={index} name="rate" type="number" value={item.rate} placeholder="2322" onChange={editSingle}  />
+                <input className="form-control form-control-md form-control-dark" id={index} name="rate" type="number" value={item.rate} onChange={editSingle}  />
               </div>
               <div className="col-2">
                 <label className="form-label text-dark" htmlFor="c-name">Amount<span>*</span></label>

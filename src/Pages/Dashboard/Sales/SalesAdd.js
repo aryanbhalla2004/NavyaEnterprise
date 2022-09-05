@@ -13,7 +13,7 @@ const SalesAdd = (props) => {
     partyGST: '',
     status: "Pending",
     invoice:(parseInt(props.ExtraInfo && props.ExtraInfo.data.totalInvoice) + 1),
-    products: [{id: "", name: "", hsn: "", qt: "", rate: "", total: ''}]
+    products: [{id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}]
   });
 
   const updateUserInput = (e) => {
@@ -24,7 +24,7 @@ const SalesAdd = (props) => {
 
   const addRow = (e) => {
     setUserInput(prevInput => ({
-      ...prevInput, products: [...userInput.products, {id: "", name: "", hsn: "", qt: "", rate: "", total: ''}]
+      ...prevInput, products: [...userInput.products, {id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}]
     }));
   }
   

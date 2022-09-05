@@ -89,7 +89,7 @@ const SaleView = () => {
             <div class="content-sizing header-content-wrapper">
               <p>GSTIN: 03BEBPK2312D1ZG</p>
               <p>JAI MATA DI</p>
-              <p>M. 98148-47100</p>
+              <p>M. 70094-70846</p>
             </div>
           </div>
           <div class="logo-tag-line">
@@ -97,7 +97,7 @@ const SaleView = () => {
             <p>DEALS IN: ALL KINDS OF QUALITY NUTS, BOLTS & WASHERS</p>
           </div>
           <div class="header-title-info">
-            <p>CHOPRA STREET, AHMEDGARH-148021, DISTT. SANGRUR, PUNJAB</p>
+            <p>CHOPRA STREET, AHMEDGARH-148021, MALERKOTLA, PUNJAB</p>
           </div>
           <div class="custer-info-box">
             <div class="content-sizing custer-info-wrapper">

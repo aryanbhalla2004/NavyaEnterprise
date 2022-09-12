@@ -2,20 +2,27 @@ import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import { useNavigate, useParams } from "react-router-dom";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-
-const SalesAdd = (props) => {
+import { firebase } from '../../../util/Firebase';
+const SalesEdit = (props) => {
   const history = useNavigate();
   const [error, setError] = useState("");
-  const [userInput, setUserInput] = useState({
-    stateCode: "",
-    date: new Date().toLocaleDateString("en-US"),
-    ms: "",
-    partyGST: '',
-    status: "Pending",
-    invoice:(parseInt(props.ExtraInfo && props.ExtraInfo.data.totalInvoice) + 1),
-    products: [{id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}]
-  });
+  const [userInput, setUserInput] = useState();
 
+  const {id} = useParams();
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async() => {
+    firebase.firestore().collection('Sales').doc(id).get()
+    .then((docRef) =>  {
+      setUserInput(docRef.data());
+      console.log(userInput);
+    });
+
+    
+  }
   const updateUserInput = (e) => {
     setUserInput(prevInput => ({
       ...prevInput, [e.target.name]: e.target.value
@@ -27,14 +34,6 @@ const SalesAdd = (props) => {
       ...prevInput, products: [...userInput.products, {id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}]
     }));
   }
-
-  const arrSplicer = (itm) => {
-    let arr = userInput.products;
-
-    arr.splice(itm, 1);
-
-    setUserInput(prevInput => ({...prevInput, products: arr}));
-  }
   
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +41,7 @@ const SalesAdd = (props) => {
     var item = userInput;
     updateInvoice();
     try{
-      let userDetails = await props.add("Sales",item);
+      let userDetails = await props.edit(item, "Sales", id);
       history('/dashboard/bill-of-sale');
     }
     catch(e){
@@ -78,6 +77,14 @@ const SalesAdd = (props) => {
     
    
   }
+
+  const arrSplicer = (itm) => {
+    let arr = userInput.products;
+
+    arr.splice(itm, 1);
+
+    setUserInput(prevInput => ({...prevInput, products: arr}));
+  }
   return (
     <div className='header-content-right-page'>
       <div className='content-sizing-db wrapper-db-content'>
@@ -85,7 +92,7 @@ const SalesAdd = (props) => {
           <h3>Create New Sales</h3>
           <Link to="/dashboard/bill-of-sale" className="btn-general primary-btn"><i className="bi bi-arrow-left"></i> Back</Link>
         </div>
-        <form onSubmit={onSubmit} className="card card-light card-body border-0 shadow-sm p-4 mt-5" id="basic-info">
+       {userInput && <form onSubmit={onSubmit} className="card card-light card-body border-0 shadow-sm p-4 mt-5" id="basic-info">
           <div className="row form-row d-flex">
             <h2 className="h4 mb-2">Sales Details</h2>
             <button type="submit" onClick={onSubmit}className="btn-general primary-btn blue mb-2" href="/dashboard/trucks"> Submit</button>
@@ -93,7 +100,7 @@ const SalesAdd = (props) => {
           <div className="row mt-3">
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">To M/s:<span>*</span></label>
-              <input className="form-control form-control-md form-control-dark" id="dealorNum" name="ms" value={userInput.iwe} type="text" onChange={updateUserInput}/>
+              <input className="form-control form-control-md form-control-dark" id="dealorNum" name="ms" value={userInput.ms} type="text" onChange={updateUserInput}/>
             </div>
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Bill No. #<span>*</span></label>
@@ -128,6 +135,8 @@ const SalesAdd = (props) => {
           </div>
           {userInput.products && userInput.products.map((item, index) => (
             <div className="row mt-3" key={index}>
+              
+               
               <div className="col-1 special-col">
               <div onClick={() => {arrSplicer(index)}} className="btn-general primary-btn special-trash"><i class="bi bi-trash"></i></div>
               <div>
@@ -157,11 +166,11 @@ const SalesAdd = (props) => {
             </div>
           ))}
 
-        </form> 
+        </form> }
       </div>
     </div>
   )
 }
 
 
-export default SalesAdd;
+export default SalesEdit;

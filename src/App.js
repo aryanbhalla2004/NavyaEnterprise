@@ -7,6 +7,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Sales from './Pages/Dashboard/Sales/Sales';
 import "./App.css";
 import SalesAdd from './Pages/Dashboard/Sales/SalesAdd';
+import SalesEdit from './Pages/Dashboard/Sales/SalesEdit'
 import SaleView from './Pages/Dashboard/Sales/SalesView';
 import DashboardHome from './Pages/Dashboard/DashboardHome';
 
@@ -111,7 +112,7 @@ const App = () => {
             <Route path="bill-of-sale" element={<Sales/>}/>
             <Route path="bill-of-sale/:id" element={<SaleView/>}/>
             <Route path="bill-of-sale/add" element={<SalesAdd ExtraInfo={ExtraInfo} SalesPost={SalesPost} edit={edit} add={add}/>}/>
-            <Route path="bill-of-sale/edit/:id" element={<Sales/>}/>
+            <Route path="bill-of-sale/edit/:id" element={<SalesEdit ExtraInfo={ExtraInfo} SalesPost={SalesPost} edit={edit} add={add}/>}/>
             <Route path="setting" element={<h1>Home</h1>}/>
           </Route>
 

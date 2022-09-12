@@ -15,7 +15,17 @@ body {
   width: 100%;
   border-bottom: 1px solid #ddd;
 }
-
+.special-trash{
+  padding: 5px !important;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.special-col {
+  justify-content:center !important;
+  display: flex !important;
+  flex-direction: row !important; 
+  gap: 15px;
+}
 .content-sizing {
   max-width: 1300px;
   width: 100%;

@@ -131,7 +131,7 @@ const SalesEdit = (props) => {
           <div className="row mt-3">
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Party Address<span>*</span></label>
-              <input className="form-control form-control-md form-control-dark" id="address" value={userInput.address} name="partyGST" onChange={updateUserInput}/>
+              <input className="form-control form-control-md form-control-dark" id="address" value={userInput.address} name="address" onChange={updateUserInput}/>
             </div>
           </div>
           <div className="row form-row mt-3 d-flex">

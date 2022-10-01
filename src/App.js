@@ -77,6 +77,7 @@ const App = () => {
 
   const getData = async (from) => {
     const cityRef = firebase.firestore().collection(from);
+    
     cityRef.onSnapshot((querySnapShot) => {
       const items = [];
       querySnapShot.forEach((doc) => {

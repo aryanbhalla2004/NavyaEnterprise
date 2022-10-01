@@ -12,6 +12,7 @@ const SalesAdd = (props) => {
     ms: "",
     partyGST: '',
     status: "Pending",
+    address: "",
     invoice:(parseInt(props.ExtraInfo && props.ExtraInfo.data.totalInvoice) + 1),
     products: [{id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}]
   });
@@ -37,17 +38,21 @@ const SalesAdd = (props) => {
   }
   
   const onSubmit = async (e) => {
+    //! Required
     e.preventDefault();
+    if(userInput.stateCode != "" && userInput.ms != "" && userInput.partyGST != "" && userInput.address != "") {
+      var item = userInput;
+      updateInvoice();
 
-    var item = userInput;
-    updateInvoice();
-    try{
-      let userDetails = await props.add("Sales",item);
-      history('/dashboard/bill-of-sale');
+      try {
+        let userDetails = await props.add("Sales", item);
+        history('/dashboard/bill-of-sale');
+      } catch(e){
+        setError(e.message);
+      }
     }
-    catch(e){
-      setError(e.message);
-    }
+    
+    
   }
 
   const updateInvoice = async(e) => {
@@ -122,6 +127,12 @@ const SalesAdd = (props) => {
               <input className="form-control form-control-md form-control-dark"  disabled value={userInput.date} onChange={updateUserInput} />
             </div>
           </div>
+          <div className="row mt-3">
+            <div className="col">
+              <label className="form-label text-dark" htmlFor="c-name">Party Address<span>*</span></label>
+              <input className="form-control form-control-md form-control-dark" id="address" name="address" onChange={updateUserInput}/>
+            </div>
+          </div>
           <div className="row form-row mt-3 d-flex">
             <h2 className="h4 mb-2 mt-4">Products Details</h2>
             <button type="button" onClick={addRow} className="btn-general blue primary-btn"> Add Row</button>
@@ -129,7 +140,7 @@ const SalesAdd = (props) => {
           {userInput.products && userInput.products.map((item, index) => (
             <div className="row mt-3" key={index}>
               <div className="col-1 special-col">
-              <div onClick={() => {arrSplicer(index)}} className="btn-general primary-btn special-trash"><i class="bi bi-trash"></i></div>
+              <div onClick={() => {arrSplicer(index)}} className="btn-general primary-btn special-trash">X</div>
               <div>
                 <label className="form-label text-dark" htmlFor="c-name">No.<span>*</span></label>
                 <input className="form-control form-control-md form-control-dark" id={index} value={index + 1} name="id" type="make" onChange={editSingle} disabled/>

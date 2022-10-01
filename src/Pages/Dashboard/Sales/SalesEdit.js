@@ -80,11 +80,10 @@ const SalesEdit = (props) => {
 
   const arrSplicer = (itm) => {
     let arr = userInput.products;
-
     arr.splice(itm, 1);
-
     setUserInput(prevInput => ({...prevInput, products: arr}));
   }
+  
   return (
     <div className='header-content-right-page'>
       <div className='content-sizing-db wrapper-db-content'>
@@ -118,15 +117,21 @@ const SalesEdit = (props) => {
           <div className="row mt-3">
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Party GSTIN No.<span>*</span></label>
-              <input className="form-control form-control-md form-control-dark" id="address" name="partyGST" onChange={updateUserInput}/>
+              <input className="form-control form-control-md form-control-dark" id="address" value={userInput.partyGST} name="partyGST" onChange={updateUserInput}/>
             </div>
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">State Code<span>*</span></label> 
-              <input className="form-control form-control-md form-control-dark" name="stateCode" type="text" onChange={updateUserInput} />
+              <input className="form-control form-control-md form-control-dark" name="stateCode" value={userInput.stateCode} type="text" onChange={updateUserInput} />
             </div>
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Date<span></span></label>
               <input className="form-control form-control-md form-control-dark"  disabled value={userInput.date} onChange={updateUserInput} />
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div className="col">
+              <label className="form-label text-dark" htmlFor="c-name">Party Address<span>*</span></label>
+              <input className="form-control form-control-md form-control-dark" id="address" value={userInput.address} name="partyGST" onChange={updateUserInput}/>
             </div>
           </div>
           <div className="row form-row mt-3 d-flex">

@@ -191,8 +191,7 @@ const SaleView = () => {
                       <span>0.00</span>
                     </li>
                     <li>
-                      <h2>Total:</h2>
-                      
+                      <h2>Total:</h2>  
                       <span>&#8377; {parseInt(parseInt(getTotal(false, false)) + parseInt(listing && listing.stateCode === "03" ? (get9() * 2) : getIGST())).toFixed(2)}</span>
                     </li>
                   </ul>

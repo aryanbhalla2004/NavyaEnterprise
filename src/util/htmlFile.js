@@ -2,7 +2,7 @@ import html2pdf from "html2pdf.js";
 
 var opt = {
   margin: 0,
-  filename: "FastWayTruckSales.pdf",
+  filename: "billofsales.pdf",
   html2canvas: { 
     dpi: 192,
     scale:4,

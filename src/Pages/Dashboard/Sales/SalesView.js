@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import {firebase} from "../../../util/Firebase";
 import "./Sales.css";
-import { print } from '../../../util/htmlFile'
+import { print } from '../../../util/htmlFile';
+import moment from 'moment/moment';
 
 const SaleView = () => {
   const [listing, setListing] = useState();
@@ -107,10 +108,16 @@ const SaleView = () => {
               </div>
               <div class="left-side">
                 <h3>Bill No. <span>{listing && listing.invoice}</span></h3>
-                <h3>Dated: <span>{listing && listing.date}</span></h3>
+                <h3>Dated: <span>{listing && moment(listing.date).format("YYYY-MM-DD")}</span></h3>
               </div>
             </div>
           </div>
+          <div class="custer-info-box">
+            <div class="content-sizing custer-info-wrapper">
+              <h3 className='adGap-Between'><div>Party's Address. <span>{listing && listing.address}</span></div></h3>
+            </div>
+          </div>
+          
           <div class="custer-info-box">
             <div class="content-sizing custer-info-items">
               <ul className='products-bill-of-sale'>

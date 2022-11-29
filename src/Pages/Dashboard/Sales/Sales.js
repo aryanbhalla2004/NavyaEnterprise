@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
 import { firebase } from '../../../util/Firebase';
+import moment from 'moment/moment';
 export const Sales = (props) => {
   const [setDeleteBox, setDeleteId] = useOutletContext();
   const [sales, setSales] = useState([]);
@@ -62,7 +63,7 @@ export const Sales = (props) => {
                     {item.status === "Pending" && <div className='new-item'>Pending</div>}  
                     {item.status === "Done" && <div className='old-item'>Done</div>}
                   </td>
-                  <td>{item.date}</td>
+                  <td>{moment(item.date).format("YYYY-MM-DD") }</td>
                   <td><a href="#" className="btn-danger delete-button-table" onClick={() => {setDeleteBox(true); setDeleteId({...item, type: "Sales"})}}><i class="bi bi-trash3"></i> Delete</a><Link className=" edit-button" to={`/dashboard/bill-of-sale/${item.id}`}><i class="bi bi-binoculars"></i> View</Link></td>
                 </tr>
               )))}

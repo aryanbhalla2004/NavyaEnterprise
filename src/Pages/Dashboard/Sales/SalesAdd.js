@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import { useNavigate, useParams } from "react-router-dom";
+import moment from "moment/moment";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const SalesAdd = (props) => {
@@ -124,7 +125,7 @@ const SalesAdd = (props) => {
             </div>
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Date<span></span></label>
-              <input className="form-control form-control-md form-control-dark"  disabled value={userInput.date} onChange={updateUserInput} />
+              <input className="form-control form-control-md form-control-dark" type="date" value={moment(userInput.date).format("YYYY-MM-DD")} onChange={updateUserInput} />
             </div>
           </div>
           <div className="row mt-3">

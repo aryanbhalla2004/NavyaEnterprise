@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { useNavigate, useParams } from "react-router-dom";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { firebase } from '../../../util/Firebase';
+import moment from "moment/moment";
 const SalesEdit = (props) => {
   const history = useNavigate();
   const [error, setError] = useState("");
@@ -125,7 +126,7 @@ const SalesEdit = (props) => {
             </div>
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Date<span></span></label>
-              <input className="form-control form-control-md form-control-dark"  disabled value={userInput.date} onChange={updateUserInput} />
+              <input className="form-control form-control-md form-control-dark" type="date" value={moment(userInput.date).format("YYYY-MM-DD")} onChange={updateUserInput} />
             </div>
           </div>
           <div className="row mt-3">
@@ -140,8 +141,6 @@ const SalesEdit = (props) => {
           </div>
           {userInput.products && userInput.products.map((item, index) => (
             <div className="row mt-3" key={index}>
-              
-               
               <div className="col-1 special-col">
               <div onClick={() => {arrSplicer(index)}} className="btn-general primary-btn special-trash"><i class="bi bi-trash"></i></div>
               <div>

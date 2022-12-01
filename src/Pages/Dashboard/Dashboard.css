@@ -255,7 +255,7 @@
 }
 
 .bill-table > tbody > tr,  .bill-table > thead {
-  grid-template-columns: .5fr 1.4fr .5fr .5fr 2fr
+  grid-template-columns: .5fr 1.4fr .5fr 1fr 1.5fr
 }
 
 .single-block-dash {

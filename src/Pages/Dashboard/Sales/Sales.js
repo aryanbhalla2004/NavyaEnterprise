@@ -23,7 +23,7 @@ export const Sales = (props) => {
         let id = doc.id;
         items.push({...info, id});  
       });
-      setSales(items)
+      setSales(items.sort((a, b) => b.invoice - a.invoice))
       setLoading(false);
     });
   }

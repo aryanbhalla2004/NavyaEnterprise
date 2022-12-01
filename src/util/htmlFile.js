@@ -18,6 +18,23 @@ export const print = () => {
   element.style.transform = "translateY(-30px)";
   element.classList.remove("shadow-sm");
   element.classList.remove("mt-5");
+
+  var smallerText = element.querySelectorAll(".pdf-edit-title-small");
+  smallerText.forEach(elem => {
+   elem.style.fontSize = ".7rem";
+   elem.style.fontWeight = "500";
+  });
+
+  var smallerText = element.querySelectorAll(".pdf-edit-small-not");
+  smallerText.forEach(elem => {
+   elem.style.fontSize = ".9rem";
+   elem.style.fontWeight = "500";
+  });
+
+  var remPad = element.querySelectorAll(".remove-tp-b-pad");
+  remPad.forEach(elem => {
+    elem.style.padding = "10px ";
+   });
   // var user = element.querySelector(".company-info-top-left");
   // user.style.transform = "scale(.8)";
   // user.style.marginLeft = "-20px";

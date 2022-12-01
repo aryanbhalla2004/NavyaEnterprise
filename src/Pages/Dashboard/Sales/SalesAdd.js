@@ -15,7 +15,11 @@ const SalesAdd = (props) => {
     status: "Pending",
     address: "",
     invoice:(parseInt(props.ExtraInfo && props.ExtraInfo.data.totalInvoice) + 1),
-    products: [{id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}]
+    products: [{id: "", name: "", hsn: "", qt: "0", rate: "0", total: "0"}],
+    unit: '',
+    pvtMarka: '',
+    ewaybill: '',
+    transport: '',
   });
 
   const updateUserInput = (e) => {
@@ -128,6 +132,22 @@ const SalesAdd = (props) => {
               <input className="form-control form-control-md form-control-dark" type="date" value={moment(userInput.date).format("YYYY-MM-DD")} onChange={updateUserInput} />
             </div>
           </div>
+
+          <div className="row mt-3">
+            <div className="col">
+              <label className="form-label text-dark" htmlFor="marka">PVT-MARKA.<span></span></label>
+              <input className="form-control form-control-md form-control-dark" id="marka" type="text" name="pvtMarka" value={userInput.pvtMarka} onChange={updateUserInput}/>
+            </div>
+            <div className="col">
+              <label className="form-label text-dark" htmlFor="way-bill">E-WAY Bill<span></span></label> 
+              <input className="form-control form-control-md form-control-dark" id="way-bill" type="text" name="ewaybill"  value={userInput.ewaybill} onChange={updateUserInput} />
+            </div>
+            <div className="col">
+              <label className="form-label text-dark" htmlFor="tr">Transport<span></span></label>
+              <input className="form-control form-control-md form-control-dark" id="tr" type="text" name="transport" value={userInput.transport} onChange={updateUserInput} />
+            </div>
+          </div>
+
           <div className="row mt-3">
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Party Address<span>*</span></label>
@@ -146,7 +166,7 @@ const SalesAdd = (props) => {
                 <label className="form-label text-dark" htmlFor="c-name">No.<span>*</span></label>
                 <input className="form-control form-control-md form-control-dark" id={index} value={index + 1} name="id" type="make" onChange={editSingle} disabled/>
                 </div></div>
-              <div className="col-4">
+              <div className="col-3">
                 <label className="form-label text-dark" htmlFor="c-name">Name of Product / Service<span>*</span></label>
                 <input className="form-control form-control-md form-control-dark" id={index} name="name" type="text" value={item.name} onChange={editSingle}/>
               </div>
@@ -157,6 +177,10 @@ const SalesAdd = (props) => {
               <div className="col-1">
                 <label className="form-label text-dark" htmlFor="c-name">Quantity<span>*</span></label>
                 <input className="form-control form-control-md form-control-dark" id={index} name="qt" type="number" value={item.qt} onChange={editSingle}  />
+              </div>
+              <div className="col-1">
+                <label className="form-label text-dark" htmlFor="c-name">UNIT<span>*</span></label>
+                <input className="form-control form-control-md form-control-dark" id={index} name="unit" type="text" value={item.unit} onChange={editSingle}  />
               </div>
               <div className="col-2">
                 <label className="form-label text-dark" htmlFor="c-name">Rate<span>*</span></label>

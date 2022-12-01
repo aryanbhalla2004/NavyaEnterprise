@@ -88,36 +88,46 @@ const SaleView = () => {
         <section className="card card-light card-body border-0 shadow-sm p-4 mt-5 pdf-file-download" id="basic-info ">
           <div class="header-continer">
             <div class="content-sizing header-content-wrapper">
-              <p>GSTIN: 03BEBPK2312D1ZG</p>
-              <p>JAI MATA DI</p>
-              <p>M. 70094-70846</p>
+              <p className='pdf-edit-title-small'>GSTIN: 03BEBPK2312D1ZG</p>
+              <p className='pdf-edit-title-small'>JAI MATA DI</p>
+              <p className='pdf-edit-title-small'>M. 70094-70846</p>
             </div>
           </div>
           <div class="logo-tag-line">
             <h1>NAVYA ENTERPRISES</h1>
-            <p>DEALS IN: ALL KINDS OF QUALITY NUTS, BOLTS & WASHERS</p>
+            <p className='pdf-edit-title-small'>DEALS IN: ALL KINDS OF QUALITY NUTS, BOLTS & WASHERS</p>
           </div>
           <div class="header-title-info">
-            <p>CHOPRA STREET, AHMEDGARH-148021, MALERKOTLA, PUNJAB</p>
+            <p className='pdf-edit-title-small'>CHOPRA STREET, AHMEDGARH-148021, MALERKOTLA, PUNJAB</p>
           </div>
           <div class="custer-info-box">
             <div class="content-sizing custer-info-wrapper">
               <div class="left-side">
-                <h3 className='adGap-Between'><div>To M/s. <span>{listing && listing.ms}</span></div> <div>State Code. <span>{listing && listing.stateCode}</span></div></h3>
-                <h3 className='adGap-Between'><div>Party's GSTIN NO. <span>{listing && listing.partyGST}</span></div> <div>PAN No. <span>{listing && listing.partyGST.slice(2).slice(0, -1).slice(0, -1).slice(0, -1)}</span></div></h3>
+                <h3 className='adGap-Between pdf-edit-title-small remove-tp-b-pad'><div>To M/s. <span>{listing && listing.ms}</span></div> <div>State Code. <span>{listing && listing.stateCode}</span></div></h3>
+                <h3 className='adGap-Between pdf-edit-title-small remove-tp-b-pad'><div>Party's GSTIN NO. <span>{listing && listing.partyGST}</span></div> <div>PAN No. <span>{listing && listing.partyGST.slice(2).slice(0, -1).slice(0, -1).slice(0, -1)}</span></div></h3>
               </div>
               <div class="left-side">
-                <h3>Bill No. <span>{listing && listing.invoice}</span></h3>
-                <h3>Dated: <span>{listing && moment(listing.date).format("YYYY-MM-DD")}</span></h3>
+                <h3 className='pdf-edit-title-small remove-tp-b-pad'>Bill No. <span>{listing && listing.invoice}</span></h3>
+                <h3 className='pdf-edit-title-small remove-tp-b-pad'>Dated: <span>{listing && moment(listing.date).format("YYYY-MM-DD")}</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="custer-info-box remove-border-bottom">
+            <div class="content-sizing three-box-fit">
+              <div class="transport-side">
+                  <p className='pdf-edit-title-small remove-tp-b-pad'>Transport: <span>{listing && listing.transport}</span></p>
+                  <p className='pdf-edit-title-small remove-tp-b-pad'>E-WAY BILL: <span>{listing && listing.ewaybill}</span></p>
+                  <p className='pdf-edit-title-small remove-tp-b-pad'>PVT-MARKA: <span>{listing && listing.pvtMarka}</span></p>
               </div>
             </div>
           </div>
           <div class="custer-info-box">
-            <div class="content-sizing custer-info-wrapper">
-              <h3 className='adGap-Between'><div>Party's Address. <span>{listing && listing.address}</span></div></h3>
+            <div class="content-sizing three-box-fit">
+              <div className='full-width-col'>
+                <div className='pdf-edit-title-small remove-tp-b-pad'>Party's Address. <span>{listing && listing.address}</span></div>
+              </div>
             </div>
           </div>
-          
           <div class="custer-info-box">
             <div class="content-sizing custer-info-items">
               <ul className='products-bill-of-sale'>
@@ -140,6 +150,10 @@ const SaleView = () => {
                       {item && item.qt}
                     </div>
                     <div>
+                      <span>UNIT</span>
+                      {item && item.unit}
+                    </div>
+                    <div>
                       <span>Rate</span>
                       &#8377; {item && parseInt(item.rate).toFixed(2)}
                     </div>
@@ -157,49 +171,49 @@ const SaleView = () => {
               <div class="left-side-info">
                 <div className='bank-sign'>
                   <div className='bank-info'>
-                    <p><span>BANK:</span> HDFC BANK, AHMEDGARH</p>
-                    <p><span>A/C:</span> 50200035289649</p>
-                    <p><span>IFSC CODE:</span> HDFC 0001836</p>
+                    <p className='pdf-edit-small-not'><span>BANK:</span> HDFC BANK, AHMEDGARH</p>
+                    <p className='pdf-edit-small-not'><span>A/C:</span> 50200035289649</p>
+                    <p className='pdf-edit-small-not'><span>IFSC CODE:</span> HDFC 0001836</p>
                   </div>
                   <div className='signature'>
-                    <h2>For NAVYA ENTERPRISES</h2>
-                    <p>Auth: Signatory</p>
+                    <h2 className='pdf-edit-title-small'>For NAVYA ENTERPRISES</h2>
+                    <p className='pdf-edit-title-small'>Auth: Signatory</p>
                   </div>
                 </div>
 
                 <div className='discla'>
-                  <p>1. Interest will be charged @ 24% if the bill is not paid within 45 days.</p>
-                  <p>2. Our responsibility eases when the goods leave our godown under Rly/TPT receipt.</p>
-                  <p>3. All payment show be made bt A/c Payee's Cheque or draft only.</p>
-                  <p>4. All Disputes arising out of this transaction are subject to Jurisdiction of Malerkotla Courts.</p>
+                  <p className='pdf-edit-title-small'>1. Interest will be charged @ 24% if the bill is not paid within 45 days.</p>
+                  <p className='pdf-edit-title-small'>2. Our responsibility eases when the goods leave our godown under Rly/TPT receipt.</p>
+                  <p className='pdf-edit-title-small'>3. All payment show be made bt A/c Payee's Cheque or draft only.</p>
+                  <p className='pdf-edit-title-small'>4. All Disputes arising out of this transaction are subject to Jurisdiction of Malerkotla Courts.</p>
                 </div>
               </div>
               <div class="right-side-sale">
                 <div class="spacing-top-bottom">
                   <ul class="total-price">
-                    <li>
-                      <h3>Sub Total</h3>
-                      <span>&#8377; {getTotal(false, false)}</span>
+                    <li className='remove-tp-b-pad'>
+                      <h3 className='pdf-edit-title-small'>Sub Total</h3>
+                      <span className='pdf-edit-title-small'>&#8377; {getTotal(false, false)}</span>
                     </li>
-                    <li>
-                      <h3>CGST</h3>
-                      <span>&#8377; {listing && listing.stateCode === "03" ? get9() : "0.00"}</span>
+                    <li className='remove-tp-b-pad'>
+                      <h3 className='pdf-edit-title-small'>CGST</h3>
+                      <span className='pdf-edit-title-small'>&#8377; {listing && listing.stateCode === "03" ? get9() : "0.00"}</span>
                     </li>
-                    <li>
-                      <h3>SGST</h3>
-                      <span>&#8377; {listing && listing.stateCode === "03" ? get9() : "0.00"}</span>
+                    <li className='remove-tp-b-pad'>
+                      <h3 className='pdf-edit-title-small'>SGST</h3>
+                      <span className='pdf-edit-title-small'>&#8377; {listing && listing.stateCode === "03" ? get9() : "0.00"}</span>
                     </li>
-                    <li>
-                      <h3>IGST (18%)</h3>
-                      <span>&#8377; {listing && listing.stateCode !== "03" ? getIGST() : "0.00" }</span>
+                    <li className='remove-tp-b-pad'>
+                      <h3 className='pdf-edit-title-small'>IGST (18%)</h3>
+                      <span className='pdf-edit-title-small'>&#8377; {listing && listing.stateCode !== "03" ? getIGST() : "0.00" }</span>
                     </li>
-                    <li>
-                      <h3>Cartage:</h3>
-                      <span>0.00</span>
+                    <li className='remove-tp-b-pad'>
+                      <h3 className='pdf-edit-title-small'>Cartage:</h3>
+                      <span className='pdf-edit-title-small'>0.00</span>
                     </li>
-                    <li>
-                      <h2>Total:</h2>  
-                      <span>&#8377; {parseInt(parseInt(getTotal(false, false)) + parseInt(listing && listing.stateCode === "03" ? (get9() * 2) : getIGST())).toFixed(2)}</span>
+                    <li className='remove-tp-b-pad'>
+                      <h2 className='pdf-edit-title-small'>Total:</h2>  
+                      <span className='pdf-edit-title-small'>&#8377; {parseInt(parseInt(getTotal(false, false)) + parseInt(listing && listing.stateCode === "03" ? (get9() * 2) : getIGST())).toFixed(2)}</span>
                     </li>
                   </ul>
                 </div>

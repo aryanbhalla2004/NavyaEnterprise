@@ -115,49 +115,49 @@ const SaleView = () => {
           <div class="custer-info-box remove-border-bottom">
             <div class="content-sizing three-box-fit">
               <div class="transport-side">
-                  <p className='pdf-edit-title-small remove-tp-b-pad'>Transport: <span>{listing && listing.transport}</span></p>
-                  <p className='pdf-edit-title-small remove-tp-b-pad'>E-WAY BILL: <span>{listing && listing.ewaybill}</span></p>
-                  <p className='pdf-edit-title-small remove-tp-b-pad'>PVT-MARKA: <span>{listing && listing.pvtMarka}</span></p>
+                  <p className='pdf-edit-title-small remove-tp-b-pad'>Transport: <span>{listing && listing.transport ? listing.transport : "N/A"}</span></p>
+                  <p className='pdf-edit-title-small remove-tp-b-pad'>E-WAY BILL: <span>{listing && listing.ewaybill ? listing.ewaybill : "N/A"}</span></p>
+                  <p className='pdf-edit-title-small remove-tp-b-pad'>PVT-MARKA: <span>{listing && listing.pvtMarka ? listing.pvtMarka : "N/A"}</span></p>
               </div>
             </div>
           </div>
           <div class="custer-info-box">
             <div class="content-sizing three-box-fit">
               <div className='full-width-col'>
-                <div className='pdf-edit-title-small remove-tp-b-pad'>Party's Address. <span>{listing && listing.address}</span></div>
+                <div className='pdf-edit-title-small'>Party's Address. <span>{listing && listing.address}</span></div>
               </div>
             </div>
           </div>
           <div class="custer-info-box">
-            <div class="content-sizing custer-info-items">
-              <ul className='products-bill-of-sale'>
+            <div class="content-sizing custer-info-items remove-padding-tops-item-pdf">
+              <ul className='products-bill-of-sale' >
                 {listing && listing.products.map((item, index) => (
-                  <li>
-                    <div>
+                  <li className='remove-padding-tops-item-pdf'>
+                    <div className='item-size-pdf'>
                       <span>No.</span>
                       {index + 1}
                     </div>
-                    <div>
+                    <div className='item-size-pdf'> 
                       <span>Name of Product / Service</span>
                       {item && item.name}
                     </div>
-                    <div>
+                    <div className='item-size-pdf'>
                       <span>HSN Code</span>
                       {item && item.hsn}
                     </div>
-                    <div>
+                    <div className='item-size-pdf'>
                       <span>Quantity</span>
                       {item && item.qt}
                     </div>
-                    <div>
+                    <div className='item-size-pdf'>
                       <span>UNIT</span>
-                      {item && item.unit}
+                      {item && item.unit ? item.unit : "N/A"}
                     </div>
-                    <div>
+                    <div className='item-size-pdf'>
                       <span>Rate</span>
                       &#8377; {item && parseInt(item.rate).toFixed(2)}
                     </div>
-                    <div>
+                    <div className='item-size-pdf'>
                       <span>Amount</span>
                       &#8377; {item && parseInt(item.total).toFixed(2)}
                     </div>

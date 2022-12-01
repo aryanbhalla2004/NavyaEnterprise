@@ -10,7 +10,7 @@ var opt = {
     useCORS: true,
     scrollY: 0
   },
-  jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
 };
 
 export const print = () => {
@@ -35,11 +35,22 @@ export const print = () => {
   remPad.forEach(elem => {
     elem.style.padding = "10px ";
    });
-  // var user = element.querySelector(".company-info-top-left");
-  // user.style.transform = "scale(.8)";
-  // user.style.marginLeft = "-20px";
-  // var title = element.querySelectorAll(".pdf-edit-title");
-  // title.forEach(elem => {
+
+  var itemsSize = element.querySelectorAll(".item-size-pdf");
+  itemsSize.forEach(elem => {
+  elem.style.fontSize = ".6rem";
+  elem.style.fontWeight = "500";
+  });
+
+  var itempadding = element.querySelectorAll(".remove-padding-tops-item-pdf");
+  itempadding.forEach(elem => {
+    elem.style.padding = "0px ";
+    elem.style.marginBottom = "0px ";
+  });
+
+
+   
+ 
   //   elem.style.fontSize = ".8rem";
   // });
 

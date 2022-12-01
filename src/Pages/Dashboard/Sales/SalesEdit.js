@@ -126,7 +126,7 @@ const SalesEdit = (props) => {
             </div>
             <div className="col">
               <label className="form-label text-dark" htmlFor="c-name">Date<span></span></label>
-              <input className="form-control form-control-md form-control-dark" type="date" value={moment(userInput.date).format("YYYY-MM-DD")} onChange={updateUserInput} />
+              <input className="form-control form-control-md form-control-dark" type="date" name="date" value={moment(userInput.date).format("YYYY-MM-DD")} onChange={updateUserInput} />
             </div>
           </div>
 

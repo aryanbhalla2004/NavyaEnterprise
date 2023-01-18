@@ -15,7 +15,7 @@ var opt = {
 
 export const print = () => {
   var element = document.querySelector(".pdf-file-download").cloneNode(true);
-  element.style.transform = "translateY(-30px)";
+  element.style.transform = "translateY(-20px)";
   element.classList.remove("shadow-sm");
   element.classList.remove("mt-5");
 

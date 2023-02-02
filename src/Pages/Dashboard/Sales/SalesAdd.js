@@ -82,7 +82,7 @@ const SalesAdd = (props) => {
     
     if(e.target.name == "qt" || e.target.name == "rate") {
       if(arr[e.target.id]["qt"] !== "" && arr[e.target.id]["rate"] !== "") {
-        arr[e.target.id]["total"] =  parseInt(arr[e.target.id]["qt"]) * parseInt(arr[e.target.id]["rate"])
+        arr[e.target.id]["total"] =  parseInt(arr[e.target.id]["qt"]) * parseFloat(arr[e.target.id]["rate"])
       }
     }
     
@@ -189,7 +189,7 @@ const SalesAdd = (props) => {
               <div className="col-2">
                 <label className="form-label text-dark" htmlFor="c-name">Amount<span>*</span></label>
                 <input className="form-control form-control-md form-control-dark" id={index} name="total" type="number" value={item.total} disabled/>
-              </div>
+              </div>``
             </div>
           ))}
 

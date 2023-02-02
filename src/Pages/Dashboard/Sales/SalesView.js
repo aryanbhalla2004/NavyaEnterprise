@@ -155,11 +155,11 @@ const SaleView = () => {
                     </div>
                     <div className='item-size-pdf'>
                       <span>Rate</span>
-                      &#8377; {item && parseInt(item.rate).toFixed(2)}
+                      &#8377; {item && parseFloat(item.rate).toFixed(2)}
                     </div>
                     <div className='item-size-pdf'>
                       <span>Amount</span>
-                      &#8377; {item && parseInt(item.total).toFixed(2)}
+                      &#8377; {item && parseFloat(item.total).toFixed(2)}
                     </div>
                   </li>
                 ))}
@@ -213,7 +213,7 @@ const SaleView = () => {
                     </li>
                     <li className='remove-tp-b-pad'>
                       <h2 className='pdf-edit-title-small'>Total:</h2>  
-                      <span className='pdf-edit-title-small'>&#8377; {parseInt(parseInt(getTotal(false, false)) + parseInt(listing && listing.stateCode === "03" ? (get9() * 2) : getIGST())).toFixed(2)}</span>
+                      <span className='pdf-edit-title-small'>&#8377; {parseFloat(parseFloat(getTotal(false, false)) + parseFloat(listing && listing.stateCode === "03" ? (get9() * 2) : getIGST())).toFixed(2)}</span>
                     </li>
                   </ul>
                 </div>

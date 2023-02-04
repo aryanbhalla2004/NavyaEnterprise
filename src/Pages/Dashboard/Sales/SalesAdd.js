@@ -72,6 +72,7 @@ const SalesAdd = (props) => {
   }
 
   const editSingle = (e) => {
+    
     const arr = userInput.products;
     arr[e.target.id][e.target.name] = e.target.value;
     
@@ -81,8 +82,8 @@ const SalesAdd = (props) => {
 
     
     if(e.target.name == "qt" || e.target.name == "rate") {
-      if(arr[e.target.id]["qt"] !== "" && arr[e.target.id]["rate"] !== "") {
-        arr[e.target.id]["total"] =  parseInt(arr[e.target.id]["qt"]) * parseFloat(arr[e.target.id]["rate"])
+      if(parseFloat(arr[e.target.id]["qt"]) > 0 && parseFloat(arr[e.target.id]["rate"]) > 0) {
+        arr[e.target.id]["total"] =  (parseFloat(arr[e.target.id]["qt"]) * parseFloat(arr[e.target.id]["rate"])).toFixed(2)
       }
     }
     
